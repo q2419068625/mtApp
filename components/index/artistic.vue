@@ -45,7 +45,15 @@
 </template>
 <script>
 export default {
-
+  data(){
+    return{
+      kind:'',
+      cur:[]
+    }
+  },
+  methods:{
+    over:function(){}
+  }
 }
 </script>
 <style lang="scss">
