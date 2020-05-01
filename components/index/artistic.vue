@@ -45,25 +45,27 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
-      kind:'all',
-      list:{
-        all:[],
-        part:[],
-        spa:[],
-        movie:[],
-        travel:[]
+  data: () => {
+    return {
+      kind: 'all',
+      list: {
+        all: [],
+        part: [],
+        spa: [],
+        movie: [],
+        travel: []
       }
     }
   },
-  computed:{
-    cur:function(){
+  computed: {
+    cur: function () {
       return this.list[this.kind]
     }
   },
   async mounted(){
     let self=this;
+    //console.log(self.$store.state.geo.position.city);
+    
     let {status,data:{count,pois}}=await self.$axios.get('/search/resultsByKeywords',{
       params:{
         keyword:'景点',
@@ -85,8 +87,8 @@ export default {
       self.list[self.kind]=[]
     }
   },
-  methods:{
-    over:async function(e){
+  methods: {
+    over: async function (e) {
       let dom = e.target
       let tag = dom.tagName.toLowerCase()
       let self = this
@@ -110,12 +112,14 @@ export default {
             }
           })
           self.list[self.kind]=r.slice(0,9)
+          //console.log(self.list)
         }else{
           self.list[self.kind]=[]
         }
       }
     }
-  }
+  },
+
 }
 </script>
 <style lang="scss">
