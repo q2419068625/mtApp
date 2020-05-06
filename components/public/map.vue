@@ -24,7 +24,7 @@ export default {
     data(){
         return{
             id:`map`,
-            key:'9a769d85f4fd895db1132109f56657ae'
+            key:'你的高德key'
         }
     },
     watch:{
