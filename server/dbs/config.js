@@ -13,7 +13,7 @@ export default{
             return 'smtp.qq.com'
         },
         get user(){
-            return ''//你的邮箱号
+            return '@qq.com'//你的邮箱号
         },
         get pass(){
             return ''//你的授权码
@@ -25,7 +25,7 @@ export default{
         },
         get expire(){
             return ()=>{
-                return new Date().getTime()+(60*1000)
+                return new Date().getTime()*60*60+1000
             }
         }
     }
